@@ -1,2 +1,3 @@
 # IncomeStatementUI
-Created with CodeSandbox
+
+Prototype for the display of an income statement.
