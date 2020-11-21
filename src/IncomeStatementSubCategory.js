@@ -3,13 +3,14 @@ import FilterContext from "./FilterContext"
 
 const IncomeStatementSubCategory = ({subcategory}) => {
     const { name, values } = subcategory;
-    const isTotal = typeof values;
-    console.log(isTotal === "string")
+    const isTotal = typeof values === "string";
 
-    const renderDetails = (values) => {
+    const renderDetails = (filters, values) => {
         return values.map( v => {
             const { month, value } = v;
-            return <div>{month}{value}</div>
+            if(filters.currentPeriod === month || filters.currentPeriod === "") {
+                return <div>{month}{value}</div>
+            }
         })
     }
 
@@ -17,11 +18,9 @@ const IncomeStatementSubCategory = ({subcategory}) => {
         <FilterContext.Consumer>
             {
                 filters => {
-                    console.log(filters)
                     return <div className="subcat-row">
                         <div>{name}</div>
-                        <div>{filters.currentPeriod}</div>
-                        { isTotal === "string" ? <div>{values}</div> : renderDetails(values)}
+                        { isTotal ? <div>{values}</div> : renderDetails(filters, values)}
                     </div>
                 }
             }
