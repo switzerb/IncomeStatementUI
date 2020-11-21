@@ -1,9 +1,13 @@
 import React from "react";
 
 const CategoryFilter = ({keyword, onChange}) => {
-    return (<input
-        onChange={onChange}
-    />)
+    return (<>
+        <label>Filter by Category or Subcategory</label>
+        <input
+            id="filter"
+            onChange={onChange}
+        />
+        </>)
 }
 
 export default CategoryFilter;
