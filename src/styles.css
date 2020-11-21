@@ -4,17 +4,6 @@ body {
   background-color: whitesmoke;
 }
 
-.subcat-row {
-  display: flex;
-  border: 1px solid red;
-}
-
-.subcat-row div {
-  flex: 1;
-  border: 1px solid blue;
-  width: 20%;
-}
-
 .Filters {
   display: flex;
 }

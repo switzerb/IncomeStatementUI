@@ -5,8 +5,14 @@
     border: 1px solid #eee;
 }
 
-.Section h2 {
+.Section-label {
+    font-size: 1.5rem;
     background-color: darkgray;
     margin: 0;
     padding: 5px 2px;
+}
+
+.Section-total {
+    margin-top: 20px;
+    font-weight: bold;
 }

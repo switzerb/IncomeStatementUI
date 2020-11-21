@@ -1,3 +1,28 @@
 .TableHead {
     display: flex;
 }
+
+.TableHead-spacer {
+    flex: 0 0 400px;
+}
+
+.TableHead-cell {
+    flex: 1;
+}
+
+.Subcategory {
+    display: flex;
+    padding: 5px 0;
+}
+
+.Subcategory:nth-child(2n) {
+    background-color: #eee;
+}
+
+.Subcategory-name {
+    flex: 0 0 400px;
+}
+
+.Subcategory-value {
+    flex: 1;
+}

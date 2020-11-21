@@ -33,9 +33,10 @@ const IncomeStatementTable = ({data, headers}) => {
                 return <>
                     <Section>
                         <div className="TableHead">
+                            <div className="TableHead-spacer" />
                             {headers.map(h => {
                                 if(filters.currentPeriod === h || filters.currentPeriod === "") {
-                                    return <div>{h}</div>
+                                    return <div className="TableHead-cell">{h}</div>
                                 }
                             })}
                         </div>

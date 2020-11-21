@@ -5,9 +5,9 @@ import "./Section.css";
 // collapsible
 const Section = ({label, total, children}) => {
     return (<div className="Section">
-        {label && <h2>{label}</h2>}
+        {label && <div className="Section-label">{label}</div>}
         {children}
-        {total && <div>Quarterly Total: {total}</div>}
+        {total && <div className="Section-total">Quarterly Total: {total}</div>}
     </div>);
 }
 export default Section;
