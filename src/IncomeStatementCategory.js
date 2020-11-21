@@ -1,14 +1,13 @@
 import React from "react";
 
 import "./IncomeStatementStyles.css";
+import IncomeStatementSubCategory from "./IncomeStatementSubCategory";
 
 export const IncomeStatementCategory = ({ category }) => {
-  // TODO implement this
+  const {subCategories} = category;
   return (
     <div className="IncomeContainer">
-      {category.subCategories.map((subCategory) => (
-        <div>{subCategory.name}</div>
-      ))}
+      {subCategories && subCategories.map( sc => <IncomeStatementSubCategory subcategory={sc}/>)}
     </div>
   );
 };

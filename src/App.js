@@ -1,22 +1,30 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import IncomeStatementTable from "./IncomeStatementTable";
 
-import { getIncomeStatement } from "./apiMock";
+import {getIncomeStatement} from "./apiMock";
 
 import "./styles.css";
 
-export default function App() {
-  let data;
+const App = () => {
+    const [isLoading, setIsLoading] = useState(false)
+    const [data, setData] = useState([])
 
-  getIncomeStatement().then((response) => {
-    data = response;
-  });
+    useEffect(() => {
+        async function fetchData() {
+            setIsLoading(true);
+            const response = await getIncomeStatement();
+            setData(response);
+            setIsLoading(false);
+        }
+        fetchData()
+    }, []);
 
-  return (
-    <div className="App">
-      <h1>Income Statement</h1>
-
-      <IncomeStatementTable data={data} />
-    </div>
-  );
+    return isLoading
+        ? <p>Loading...</p>
+        : <div className="App">
+            <h1>Income Statement</h1>
+            <IncomeStatementTable data={data}/>
+        </div>;
 }
+
+export default App;

@@ -1,24 +1,24 @@
 import React from "react";
-import { PureComponent } from "react";
+import {IncomeStatementCategory} from "./IncomeStatementCategory";
 
-import { IncomeStatementCategory } from "./IncomeStatementCategory";
+const IncomeStatementTable = ({data}) => {
+    const hasData = data.length > 0;
+    if(!hasData) { return <p>No information is available at this time.</p>}
 
-export default class IncomeStatementTable extends PureComponent {
-  render() {
     return (
       <div>
-        {this.props.data.map((category) => {
+        {data.map((category) => {
           return (
-            <>
-              <div>
-                {category.name}
-                <br />
-              </div>
-              <IncomeStatementCategory category={category} />
-            </>
+              <>
+                <div>
+                  {category.name}
+                  <br/>
+                </div>
+                <IncomeStatementCategory category={category}/>
+              </>
           );
         })}
       </div>
-    );
-  }
+  );
 }
+export default IncomeStatementTable;
