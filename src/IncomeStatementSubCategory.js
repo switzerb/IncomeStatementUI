@@ -18,10 +18,14 @@ const IncomeStatementSubCategory = ({subcategory}) => {
         <FilterContext.Consumer>
             {
                 filters => {
-                    return <div className="subcat-row">
-                        <div>{name}</div>
-                        { isTotal ? <div>{values}</div> : renderDetails(filters, values)}
-                    </div>
+                    if(name.includes(filters.keyword) || filters.keyword === "") {
+                        return (
+                            <div className="subcat-row">
+                                <div>{name}</div>
+                                { isTotal ? <div>{values}</div> : renderDetails(filters, values)}
+                            </div>
+                        )
+                    }
                 }
             }
         </FilterContext.Consumer>

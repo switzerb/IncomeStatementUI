@@ -32,7 +32,7 @@ const App = () => {
                 console.log("There was an error fetching data.")
             }
         }
-        fetchData()
+        fetchData().catch(e => console.log(e));
     }, []);
 
     const handleSelect = (selection) => {
@@ -41,20 +41,6 @@ const App = () => {
 
     const handleFilter = (e) => {
         setKeyword(e.target.value);
-        filterDataSet(e.target.value, "CATEGORY")
-    }
-
-    const filterDataSet = (keyword, type) => {
-        // need elegant way to filter the data?
-        const filtered = data.filter( row => {
-            // console.log(row);
-            // if(type === "PERIOD") {
-            //     return row?.subCategories?.values?.month === keyword;
-            // } else if (type === "CATEGORY") {
-            //     return row?.subCategories?.includes(keyword);
-            // }
-        })
-        // setData(filtered);
     }
 
     return isLoading
