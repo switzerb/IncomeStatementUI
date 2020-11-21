@@ -31,7 +31,6 @@ const IncomeStatementTable = ({data, headers}) => {
         <FilterContext>
             { filters => {
                 return <>
-                    <Section>
                         <div className="TableHead">
                             <div className="TableHead-spacer" />
                             {headers.map(h => {
@@ -40,7 +39,6 @@ const IncomeStatementTable = ({data, headers}) => {
                                 }
                             })}
                         </div>
-                    </Section>
                     {renderCategories(filters)}
                 </>
             }}

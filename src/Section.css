@@ -16,3 +16,9 @@
     margin-top: 20px;
     font-weight: bold;
 }
+
+.Section-toggle {
+    float: right;
+    padding: 10px;
+    font-size: 1.3rem;
+}
