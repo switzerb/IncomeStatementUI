@@ -1,5 +1,5 @@
 export const getIncomeStatement = () => {
-  const data = [
+  const financials = [
     {
       name: "Revenue",
       subCategories: [
@@ -152,9 +152,17 @@ export const getIncomeStatement = () => {
     }
   ];
 
+  const periods = [
+      "January, 2020",
+      "February, 2020",
+      "March, 2020"
+  ];
+
+  const data = {financials, periods}
+
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       return resolve(data);
     });
-  }, 500);
+  }, 1000);
 };

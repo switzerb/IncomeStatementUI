@@ -5,4 +5,14 @@
 
 .subcat-row {
   display: flex;
+  border: 1px solid red;
+}
+
+.subcat-row div {
+  border: 1px solid blue;
+  width: 20%;
+}
+
+.SelectBox {
+
 }
