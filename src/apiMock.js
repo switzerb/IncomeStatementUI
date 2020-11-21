@@ -9,15 +9,15 @@ export const getIncomeStatement = () => {
           values: [
             {
               month: "January, 2020",
-              value: "$20,152"
+              value: "20152"
             },
             {
               month: "February, 2020",
-              value: "$25,345"
+              value: "25345"
             },
             {
               month: "March, 2020",
-              value: "$30,576"
+              value: "30576"
             }
           ]
         },
@@ -26,15 +26,15 @@ export const getIncomeStatement = () => {
           values: [
             {
               month: "January, 2020",
-              value: "$180,745"
+              value: "180745"
             },
             {
               month: "February, 2020",
-              value: "$201,082"
+              value: "201082"
             },
             {
               month: "March, 2020",
-              value: "$205,567"
+              value: "205567"
             }
           ]
         },
@@ -49,15 +49,15 @@ export const getIncomeStatement = () => {
           values: [
             {
               month: "January, 2020",
-              value: "$10,405"
+              value: "10405"
             },
             {
               month: "February, 2020",
-              value: "$11,478"
+              value: "11478"
             },
             {
               month: "March, 2020",
-              value: "$11,900"
+              value: "11900"
             }
           ]
         },
@@ -66,15 +66,15 @@ export const getIncomeStatement = () => {
           values: [
             {
               month: "January, 2020",
-              value: "$20,304"
+              value: "20304"
             },
             {
               month: "February, 2020",
-              value: "$20,890"
+              value: "20890"
             },
             {
               month: "March, 2020",
-              value: "$22,836"
+              value: "22836"
             }
           ]
         },
@@ -83,15 +83,15 @@ export const getIncomeStatement = () => {
           values: [
             {
               month: "January, 2020",
-              value: "$25,875"
+              value: "25875"
             },
             {
               month: "February, 2020",
-              value: "$27,958"
+              value: "27958"
             },
             {
               month: "March, 2020",
-              value: "$28,123"
+              value: "28123"
             }
           ]
         },
@@ -106,15 +106,15 @@ export const getIncomeStatement = () => {
           values: [
             {
               month: "January, 2020",
-              value: "$40,874"
+              value: "40874"
             },
             {
               month: "February, 2020",
-              value: "$45,567"
+              value: "45567"
             },
             {
               month: "March, 2020",
-              value: "$48,946"
+              value: "48946"
             }
           ]
         },
@@ -123,15 +123,15 @@ export const getIncomeStatement = () => {
           values: [
             {
               month: "January, 2020",
-              value: "$30,487"
+              value: "30487"
             },
             {
               month: "February, 2020",
-              value: "$32,476"
+              value: "32476"
             },
             {
               month: "March, 2020",
-              value: "$33,912"
+              value: "33912"
             }
           ]
         }

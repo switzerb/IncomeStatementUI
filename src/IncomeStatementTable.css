@@ -28,3 +28,9 @@
 .Subcategory-value {
     flex: 0 0 200px;
 }
+
+.Subcategory-value.Summary {
+    flex: 0 0 200px;
+    font-weight: bold;
+    border-top: 1px solid black;
+}

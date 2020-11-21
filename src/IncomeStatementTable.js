@@ -4,6 +4,7 @@ import Section from "./Section";
 import FilterContext from "./FilterContext";
 
 import "./IncomeStatementTable.css";
+import IncomeStatementSubCategoryTotals from "./IncomeStatementSubCategoryTotals";
 
 const IncomeStatementTable = ({data, headers}) => {
     const hasData = data.length > 0;
@@ -11,6 +12,10 @@ const IncomeStatementTable = ({data, headers}) => {
     const renderCategories = ({keyword}) => {
         return data.map((category) => {
             const {subCategories, quarterly_total} = category;
+            const totals = {
+                    name: "Total",
+                    values: calcSubcategoryTotals(subCategories)
+                };
 
             // if all subcategories are filtered out, don't show parent category
             const shouldShow = subCategories.filter( sc => sc.name.includes(keyword)).length;
@@ -18,13 +23,32 @@ const IncomeStatementTable = ({data, headers}) => {
             if(shouldShow) {
                 return (
                     <Section label={category.name} total={quarterly_total}>
-                        <div className="IncomeContainer">
-                            {subCategories && subCategories.map( sc => <IncomeStatementSubCategory subcategory={sc}/>)}
+                        {subCategories && subCategories.map( sc => <IncomeStatementSubCategory subcategory={sc}/>)}
+                        <div className="Subcategory-totals">
+                            <IncomeStatementSubCategory subcategory={totals} type="summary"/>
                         </div>
                     </Section>
                 );
             }
         })
+    }
+
+    const calcSubcategoryTotals = (subcategories) => {
+        let result = [];
+        const aggregated = subcategories.reduce((a,sc)=> {
+            sc.values.map(v => {
+                if(!a[v.month]) {
+                    a[v.month]  = [Number(v.value)];
+                } else {
+                    a[v.month].push(Number(v.value));
+                }
+            });
+            return a;
+        },{});
+        Object.entries(aggregated).map(([k,v]) => {
+            result.push({ month: k, value: v.reduce((a,n) => a + n, 0)});
+        });
+        return result;
     }
 
     return hasData ?
