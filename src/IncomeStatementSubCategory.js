@@ -8,7 +8,7 @@ const IncomeStatementSubCategory = ({subcategory}) => {
         return values.map( v => {
             const { month, value } = v;
             if(filters.currentPeriod === month || filters.currentPeriod === "") {
-                return <div>{month}{value}</div>
+                return <div>{value}</div>
             }
         })
     }

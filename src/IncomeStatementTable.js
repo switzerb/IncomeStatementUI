@@ -3,7 +3,9 @@ import IncomeStatementSubCategory from "./IncomeStatementSubCategory";
 import Section from "./Section";
 import FilterContext from "./FilterContext";
 
-const IncomeStatementTable = ({data}) => {
+import "./IncomeStatementTable.css";
+
+const IncomeStatementTable = ({data, headers}) => {
     const hasData = data.length > 0;
 
     const renderCategories = ({keyword}) => {
@@ -28,7 +30,18 @@ const IncomeStatementTable = ({data}) => {
     return hasData ?
         <FilterContext>
             { filters => {
-                return renderCategories(filters)
+                return <>
+                    <Section>
+                        <div className="TableHead">
+                            {headers.map(h => {
+                                if(filters.currentPeriod === h || filters.currentPeriod === "") {
+                                    return <div>{h}</div>
+                                }
+                            })}
+                        </div>
+                    </Section>
+                    {renderCategories(filters)}
+                </>
             }}
         </FilterContext>
         : <p>No income data available.</p>;

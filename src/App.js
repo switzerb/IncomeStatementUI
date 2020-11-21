@@ -23,8 +23,8 @@ const App = () => {
         async function fetchData() {
             setIsLoading(true);
             const response = await getIncomeStatement();
-            if(response) {
-                const { financials, periods} = response;
+            if (response) {
+                const {financials, periods} = response;
                 setData(financials);
                 setPeriods(periods);
                 setIsLoading(false);
@@ -32,6 +32,7 @@ const App = () => {
                 console.log("There was an error fetching data.")
             }
         }
+
         fetchData().catch(e => console.log(e));
     }, []);
 
@@ -48,11 +49,13 @@ const App = () => {
         :
         <FilterContext.Provider value={filters}>
             <div className="App">
-            <h1>Income Statement</h1>
-            <MonthSelect options={periods} onClick={handleSelect}/>
-            <CategoryFilter keyword={keyword} onChange={handleFilter}/>
-            <IncomeStatementTable data={data} showPeriod={currentPeriod}/>
-        </div>
+                <h1>Income Statement</h1>
+                <div className="Filters">
+                    <MonthSelect options={periods} onClick={handleSelect}/>
+                    <CategoryFilter keyword={keyword} onChange={handleFilter}/>
+                </div>
+                <IncomeStatementTable data={data} headers={periods}/>
+            </div>
         </FilterContext.Provider>;
 }
 
