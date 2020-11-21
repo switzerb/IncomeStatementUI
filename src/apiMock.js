@@ -2,6 +2,7 @@ export const getIncomeStatement = () => {
   const financials = [
     {
       name: "Revenue",
+      quarterly_total: "663467",
       subCategories: [
         {
           name: "Services",
@@ -37,14 +38,11 @@ export const getIncomeStatement = () => {
             }
           ]
         },
-        {
-          name: "total",
-          values: "$663,467"
-        }
-      ]
+      ],
     },
     {
       name: "Costs of Revenue",
+      quarterly_total: "176769",
       subCategories: [
         {
           name: "Cloud Hosting Expense",
@@ -97,14 +95,11 @@ export const getIncomeStatement = () => {
             }
           ]
         },
-        {
-          name: "total",
-          values: "176769"
-        }
       ]
     },
     {
       name: "Sales and Marketing",
+      quarterly_total: "254445",
       subCategories: [
         {
           name: "Total Sales",
@@ -124,10 +119,6 @@ export const getIncomeStatement = () => {
           ]
         },
         {
-          name: "total",
-          values: "$232,253"
-        },
-        {
           name: "Marketing Expense",
           values: [
             {
@@ -145,10 +136,6 @@ export const getIncomeStatement = () => {
           ]
         }
       ]
-    },
-    {
-      Name: "Net Profit",
-      Values: "254445"
     }
   ];
 

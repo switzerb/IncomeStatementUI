@@ -3,9 +3,8 @@ import FilterContext from "./FilterContext"
 
 const IncomeStatementSubCategory = ({subcategory}) => {
     const { name, values } = subcategory;
-    const isTotal = typeof values === "string";
 
-    const renderDetails = (filters, values) => {
+    const renderRows = (filters, values) => {
         return values.map( v => {
             const { month, value } = v;
             if(filters.currentPeriod === month || filters.currentPeriod === "") {
@@ -18,14 +17,12 @@ const IncomeStatementSubCategory = ({subcategory}) => {
         <FilterContext.Consumer>
             {
                 filters => {
-                    if(name.includes(filters.keyword) || filters.keyword === "") {
-                        return (
-                            <div className="subcat-row">
-                                <div>{name}</div>
-                                { isTotal ? <div>{values}</div> : renderDetails(filters, values)}
-                            </div>
-                        )
-                    }
+                    return (
+                        <div className="subcat-row">
+                            <div>{name}</div>
+                            {renderRows(filters, values)}
+                        </div>
+                    )
                 }
             }
         </FilterContext.Consumer>
