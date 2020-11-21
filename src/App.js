@@ -49,10 +49,14 @@ const App = () => {
         :
         <FilterContext.Provider value={filters}>
             <div className="App">
-                <h1>Income Statement</h1>
+                <div className="Header">
+                    <h1>Income Statement</h1>
+                    <h2>Consolidated Financial Operations</h2>
+                    <p>Important detail about the numbers here.</p>
+                </div>
                 <div className="Filters">
-                    <CategoryFilter keyword={keyword} onChange={handleFilter}/>
                     <MonthSelect options={periods} onClick={handleSelect}/>
+                    <CategoryFilter keyword={keyword} onChange={handleFilter}/>
                 </div>
                 <IncomeStatementTable data={data} headers={periods}/>
             </div>

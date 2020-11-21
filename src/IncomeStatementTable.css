@@ -8,7 +8,7 @@
 }
 
 .TableHead-cell {
-    flex: 1;
+    flex: 0 0 200px;
     font-weight: bold;
 }
 
@@ -26,5 +26,5 @@
 }
 
 .Subcategory-value {
-    flex: 1;
+    flex: 0 0 200px;
 }

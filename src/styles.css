@@ -4,6 +4,17 @@ body {
   background-color: whitesmoke;
 }
 
+.App {
+  width: 1100px;
+  min-width: 1100px;
+  margin: 20px auto;
+}
+
+.Header {
+  text-align: center;
+}
+
 .Filters {
   display: flex;
+  justify-content: flex-end;
 }
