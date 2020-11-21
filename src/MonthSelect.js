@@ -12,9 +12,15 @@ const MonthSelect = ({options, onClick}) => {
         setOpen(false);
     }
 
+    const handleClear = () => {
+        onClick("");
+        setOpen(false);
+    }
+
     return (
         <div className="selectBox">
             <div onClick={toggleOpen}>Filter By Financial Period</div>
+            <div onClick={handleClear}>Clear</div>
             { open
                 ? <>
                     <div onClick={() => handleSelect("All")}>
