@@ -1,34 +1,25 @@
 import React from "react";
-import {IncomeStatementCategory} from "./IncomeStatementCategory";
-import FilterContext from "./FilterContext";
+import IncomeStatementSubCategory from "./IncomeStatementSubCategory";
+import Section from "./Section";
 
-const IncomeStatementTable = ({data, showPeriod}) => {
+const IncomeStatementTable = ({data}) => {
     const hasData = data.length > 0;
-    if(!hasData) { return <p>No information is available at this time.</p>}
+    console.log(hasData)
 
-    return (
-      <FilterContext.Consumer>
-          { filters => {
-              return (<div>
-                  {data.map((category) => {
-                      if(category.name && category.name.includes(filters.keyword) || filters.keyword === ""){
-                          return (
-                              <>
-                                  <div>
-                                      <div>{category.name}</div>
-                                  </div>
-                                  <div>
-                                      <div>
-                                          <IncomeStatementCategory category={category} />
-                                      </div>
-                                  </div>
-                              </>
-                          );
-                      }
-                  })}
-              </div>)
-          }}
-      </FilterContext.Consumer>
-  );
+    const renderCategories = () => {
+        return data.map((category) => {
+            const {subCategories} = category;
+
+            return (
+                <Section label={category.name}>
+                    <div className="IncomeContainer">
+                        {subCategories && subCategories.map( sc => <IncomeStatementSubCategory subcategory={sc}/>)}
+                    </div>
+                </Section>
+            );
+        })
+    }
+
+    return hasData ? <div>{renderCategories()}</div> : <p>No income data available.</p>;
 }
 export default IncomeStatementTable;

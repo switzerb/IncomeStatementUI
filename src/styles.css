@@ -1,6 +1,7 @@
-.App {
+html,
+body {
   font-family: sans-serif;
-  text-align: center;
+  background-color: whitesmoke;
 }
 
 .subcat-row {
@@ -9,6 +10,7 @@
 }
 
 .subcat-row div {
+  flex: 1;
   border: 1px solid blue;
   width: 20%;
 }
