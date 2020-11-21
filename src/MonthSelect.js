@@ -38,7 +38,7 @@ const MonthSelect = ({options, onClick}) => {
                     <div onClick={handleClear}>
                         Show Quarter
                     </div>
-                    {options.map(option => <div onClick={() => handleSelect(option)}>{option}</div>)}
+                    {options.map(option => <div key={option} onClick={() => handleSelect(option)}>{option}</div>)}
                 </div>
                 : null
             }

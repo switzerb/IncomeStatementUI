@@ -4,7 +4,6 @@ import Section from "./Section";
 import FilterContext from "./FilterContext";
 
 import "./IncomeStatementTable.css";
-import IncomeStatementSubCategoryTotals from "./IncomeStatementSubCategoryTotals";
 
 const IncomeStatementTable = ({data, headers}) => {
     const hasData = data.length > 0;
@@ -22,13 +21,15 @@ const IncomeStatementTable = ({data, headers}) => {
 
             if(shouldShow) {
                 return (
-                    <Section label={category.name} total={quarterly_total}>
-                        {subCategories && subCategories.map( sc => <IncomeStatementSubCategory subcategory={sc}/>)}
+                    <Section key={category.name} label={category.name} total={quarterly_total}>
+                        {subCategories && subCategories.map( sc => <IncomeStatementSubCategory key={sc.name} subcategory={sc}/>)}
                         <div className="Subcategory-totals">
                             <IncomeStatementSubCategory subcategory={totals} type="summary"/>
                         </div>
                     </Section>
                 );
+            } else {
+                return null;
             }
         })
     }
@@ -52,21 +53,21 @@ const IncomeStatementTable = ({data, headers}) => {
     }
 
     return hasData ?
-        <FilterContext>
+        <FilterContext.Consumer>
             { filters => {
                 return <>
                         <div className="TableHead">
                             <div className="TableHead-spacer" />
                             {headers.map(h => {
                                 if(filters.currentPeriod === h || filters.currentPeriod === "") {
-                                    return <div className="TableHead-cell">{h}</div>
+                                    return <div key={h} className="TableHead-cell">{h}</div>
                                 }
                             })}
                         </div>
                     {renderCategories(filters)}
                 </>
             }}
-        </FilterContext>
+        </FilterContext.Consumer>
         : <p>No income data available.</p>;
 }
 export default IncomeStatementTable;
