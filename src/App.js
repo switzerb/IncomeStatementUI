@@ -51,8 +51,8 @@ const App = () => {
             <div className="App">
                 <h1>Income Statement</h1>
                 <div className="Filters">
-                    <MonthSelect options={periods} onClick={handleSelect}/>
                     <CategoryFilter keyword={keyword} onChange={handleFilter}/>
+                    <MonthSelect options={periods} onClick={handleSelect}/>
                 </div>
                 <IncomeStatementTable data={data} headers={periods}/>
             </div>

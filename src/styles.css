@@ -15,6 +15,6 @@ body {
   width: 20%;
 }
 
-.SelectBox {
-
+.Filters {
+  display: flex;
 }

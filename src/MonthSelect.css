@@ -1,9 +1,12 @@
 .MonthSelect {
-    border: 1px solid gray;
+    border: 1px solid #ccc;
+    background-color: white;
     padding: 1rem;
     display: flex;
     width: 300px;
     position: relative;
+    margin: 10px;
+    cursor: pointer;
 }
 
 .MonthSelect-label {
@@ -17,9 +20,18 @@
 .MonthSelect-options {
     width: 300px;
     position: absolute;
-    margin-top: 2.2rem;
+    margin-top: 2rem;
     left: 0;
     padding: 1rem;
     background-color: white;
     box-shadow: 2px 2px 1px gray;
+}
+
+.MonthSelect-options div {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.MonthSelect-options div:hover {
+    background-color: #eee;
 }
