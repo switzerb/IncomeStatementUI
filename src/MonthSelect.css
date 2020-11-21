@@ -1,0 +1,25 @@
+.MonthSelect {
+    border: 1px solid gray;
+    padding: 1rem;
+    display: flex;
+    width: 300px;
+    position: relative;
+}
+
+.MonthSelect-label {
+    flex: 1;
+}
+
+.MonthSelect-toggle {
+    font-weight: bold;
+}
+
+.MonthSelect-options {
+    width: 300px;
+    position: absolute;
+    margin-top: 2.2rem;
+    left: 0;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 2px 2px 1px gray;
+}

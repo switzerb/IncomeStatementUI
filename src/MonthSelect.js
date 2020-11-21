@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./MonthSelect.css";
+
 const MonthSelect = ({options, onClick}) => {
     const [open, setOpen] = useState(false);
 
@@ -18,16 +20,26 @@ const MonthSelect = ({options, onClick}) => {
     }
 
     return (
-        <div className="selectBox">
-            <div onClick={toggleOpen}>Filter By Financial Period</div>
-            <div onClick={handleClear}>Clear</div>
+        <div className="MonthSelect">
+            <div
+                onClick={toggleOpen}
+                className="MonthSelect-label"
+            >
+                Filter By Financial Period
+            </div>
+            <div
+                onClick={toggleOpen}
+                className="MonthSelect-toggle"
+            >
+                { open ? "^" : "v" }
+            </div>
             { open
-                ? <>
-                    <div onClick={() => handleSelect("All")}>
+                ? <div className="MonthSelect-options">
+                    <div onClick={handleClear}>
                         Show Quarter
                     </div>
                     {options.map(option => <div onClick={() => handleSelect(option)}>{option}</div>)}}
-                </>
+                </div>
                 : null
             }
         </div>);
