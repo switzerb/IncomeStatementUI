@@ -16,13 +16,15 @@ const IncomeStatementTable = ({data, headers}) => {
                     values: calcSubcategoryTotals(subCategories)
                 };
 
+            const filtered = subCategories.filter( sc => sc.name.includes(keyword));
+
             // if all subcategories are filtered out, don't show parent category
-            const shouldShow = subCategories.filter( sc => sc.name.includes(keyword)).length;
+            const shouldShow = filtered.length;
 
             if(shouldShow) {
                 return (
                     <Section key={category.name} label={category.name} total={quarterly_total}>
-                        {subCategories && subCategories.map( sc => <IncomeStatementSubCategory key={sc.name} subcategory={sc}/>)}
+                        {filtered && filtered.map( sc => <IncomeStatementSubCategory key={sc.name} subcategory={sc}/>)}
                         <div className="Subcategory-totals">
                             <IncomeStatementSubCategory subcategory={totals} type="summary"/>
                         </div>
