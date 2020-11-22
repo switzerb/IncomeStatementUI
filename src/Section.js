@@ -13,7 +13,7 @@ const Section = ({label, total, children}) => {
             className="Section"
             onClick={toggleOpen}
         >
-            <div className="Section-toggle">{ open ? "^" : "V" }</div>
+            <div className="Section-toggle">{ open ? "^" : "v" }</div>
             {label && <div className="Section-label">{label}</div>}
             { open
                 ? <>
