@@ -1,30 +1,36 @@
 .MonthSelect {
-    border: 1px solid #ccc;
-    background-color: white;
-    padding: 1rem;
-    display: flex;
-    width: 300px;
-    position: relative;
     margin: 10px;
-    cursor: pointer;
 }
 
 .MonthSelect-label {
-    flex: 1;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.MonthSelect-selected {
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: white;
+    width: 300px;
+    position: relative;
+    cursor: pointer;
 }
 
 .MonthSelect-toggle {
     font-weight: bold;
+    position: absolute;
+    right: 10px
 }
 
 .MonthSelect-options {
     width: 300px;
     position: absolute;
-    margin-top: 2rem;
+    margin-top: 1.1rem;
     left: 0;
     padding: 1rem;
     background-color: white;
-    box-shadow: 2px 2px 1px gray;
+    box-shadow: 2px 5px 8px gray;
 }
 
 .MonthSelect-options div {
