@@ -1,13 +1,9 @@
 import React from "react";
-import FilterContext from "./FilterContext"
+import FilterContext from "./FilterContext";
+import { formatMoney } from "./utils";
 
 const IncomeStatementSubCategory = ({subcategory, type}) => {
     const { name, values } = subcategory;
-
-    const formatMoney = (n) => {
-        const float = n.toLocaleString();
-        return `$${String(float).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
-    }
 
     const renderRows = (filters, values) => {
         return values.map( (v,i) => {

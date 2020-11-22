@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {formatMoney} from "./utils";
 
 import "./Section.css";
 
@@ -18,7 +19,7 @@ const Section = ({label, total, children}) => {
             { open
                 ? <>
                     {children}
-                    {total && <div className="Section-total">Quarterly Total: {total}</div>}
+                    {total && <div className="Section-total">Quarterly Total: {formatMoney(total)}</div>}
                 </>
                 : null
             }
