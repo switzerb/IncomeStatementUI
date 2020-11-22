@@ -39,6 +39,7 @@ const IncomeStatementTable = ({data, headers}) => {
     const calcSubcategoryTotals = (subcategories) => {
         let result = [];
         const aggregated = subcategories.reduce((a,sc)=> {
+            // eslint-disable-next-line
             sc.values.map(v => {
                 if(!a[v.month]) {
                     a[v.month]  = [Number(v.value)];
@@ -48,10 +49,21 @@ const IncomeStatementTable = ({data, headers}) => {
             });
             return a;
         },{});
+        // eslint-disable-next-line
         Object.entries(aggregated).map(([k,v]) => {
             result.push({ month: k, value: v.reduce((a,n) => a + n, 0)});
         });
         return result;
+    }
+
+    const renderHeaders = (filters) => {
+        return headers.map(h => {
+            if(filters.currentPeriod === h || filters.currentPeriod === "") {
+                return <div key={h} className="TableHead-cell">{h}</div>
+            } else {
+                return null;
+            }
+        });
     }
 
     return hasData ?
@@ -60,11 +72,7 @@ const IncomeStatementTable = ({data, headers}) => {
                 return <>
                         <div className="TableHead">
                             <div className="TableHead-spacer" />
-                            {headers.map(h => {
-                                if(filters.currentPeriod === h || filters.currentPeriod === "") {
-                                    return <div key={h} className="TableHead-cell">{h}</div>
-                                }
-                            })}
+                            { renderHeaders(filters) }
                         </div>
                     {renderCategories(filters)}
                 </>
