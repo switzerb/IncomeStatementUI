@@ -2,8 +2,10 @@ import React from "react";
 import IncomeStatementSubCategory from "./IncomeStatementSubCategory";
 import Section from "./Section";
 import FilterContext from "./FilterContext";
+import { calcSubcategoryTotals } from "./utils";
 
 import "./IncomeStatementTable.css";
+
 
 const IncomeStatementTable = ({data, headers}) => {
     const hasData = data.length > 0;
@@ -34,26 +36,6 @@ const IncomeStatementTable = ({data, headers}) => {
                 return null;
             }
         })
-    }
-
-    const calcSubcategoryTotals = (subcategories) => {
-        let result = [];
-        const aggregated = subcategories.reduce((a,sc)=> {
-            // eslint-disable-next-line
-            sc.values.map(v => {
-                if(!a[v.month]) {
-                    a[v.month]  = [Number(v.value)];
-                } else {
-                    a[v.month].push(Number(v.value));
-                }
-            });
-            return a;
-        },{});
-        // eslint-disable-next-line
-        Object.entries(aggregated).map(([k,v]) => {
-            result.push({ month: k, value: v.reduce((a,n) => a + n, 0)});
-        });
-        return result;
     }
 
     const renderHeaders = (filters) => {
