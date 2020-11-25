@@ -11,7 +11,7 @@ const IncomeStatementSubCategory = ({subcategory, type}) => {
             if(filters.currentPeriod === month || filters.currentPeriod === "") {
                 return <div
                     key={`value_${i}`}
-                    className={type ? "Subcategory-value Summary" : "Subcategory-value"}>
+                    className={type ? "Subcategory-value Summary Responsive" : "Subcategory-value Responsive"}>
                     {formatMoney(value)}
                 </div>
             } else {
@@ -26,7 +26,7 @@ const IncomeStatementSubCategory = ({subcategory, type}) => {
                 filters => {
                     return (
                         <div className="Subcategory">
-                            <div className="Subcategory-name">{name}</div>
+                            <div className="Subcategory-name Responsive">{name}</div>
                             { renderRows(filters, values) }
                         </div>
                     )

@@ -41,7 +41,7 @@ const IncomeStatementTable = ({data, headers}) => {
     const renderHeaders = (filters) => {
         return headers.map(h => {
             if(filters.currentPeriod === h || filters.currentPeriod === "") {
-                return <div key={h} className="TableHead-cell">{h}</div>
+                return <div key={h} className="TableHead-cell responsive">{h}</div>
             } else {
                 return null;
             }

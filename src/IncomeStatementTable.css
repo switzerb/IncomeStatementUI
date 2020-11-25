@@ -4,17 +4,19 @@
 }
 
 .TableHead-spacer {
-    flex: 0 0 400px;
+    flex: 1;
 }
 
 .TableHead-cell {
-    flex: 0 0 200px;
+    flex: 1;
     font-weight: bold;
+    text-align: right;
 }
 
 .Subcategory {
     display: flex;
     padding: 5px 0;
+    width: 100%;
 }
 
 .Subcategory:nth-child(2n) {
@@ -22,15 +24,17 @@
 }
 
 .Subcategory-name {
-    flex: 0 0 400px;
+    flex: 1;
 }
 
 .Subcategory-value {
-    flex: 0 0 200px;
+    flex: 1;
+    text-align: right;
+    box-sizing: border-box;
 }
 
 .Subcategory-value.Summary {
-    flex: 0 0 200px;
+    flex: 1;
     font-weight: bold;
     border-top: 1px solid black;
 }

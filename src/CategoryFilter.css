@@ -1,6 +1,7 @@
 .CategoryFilter {
-    width: 400px;
+    width: 80%;
     margin: 10px;
+    flex: 1;
 }
 
 input {
