@@ -2,7 +2,7 @@ import React from "react";
 import IncomeStatementSubCategory from "./IncomeStatementSubCategory";
 import Section from "./Section";
 import FilterContext from "./FilterContext";
-import { calcSubcategoryTotals } from "./utils";
+import { calcSubcategoryTotals, hasMatch } from "./utils";
 
 import "./IncomeStatementTable.css";
 
@@ -18,7 +18,7 @@ const IncomeStatementTable = ({data, headers}) => {
                     values: calcSubcategoryTotals(subCategories)
                 };
 
-            const filtered = subCategories.filter( sc => sc.name.includes(keyword));
+            const filtered = subCategories.filter( sc => hasMatch(sc.name, keyword));
 
             // if all subcategories are filtered out, don't show parent category
             const shouldShow = filtered.length;
@@ -40,7 +40,7 @@ const IncomeStatementTable = ({data, headers}) => {
 
     const renderHeaders = (filters) => {
         return headers.map(h => {
-            if(filters.currentPeriod === h || filters.currentPeriod === "") {
+            if(!filters.currentPeriod || hasMatch(filters.currentPeriod, h)) {
                 return <div key={h} className="TableHead-cell responsive">{h}</div>
             } else {
                 return null;

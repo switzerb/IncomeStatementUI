@@ -22,3 +22,11 @@ export const calcSubcategoryTotals = (subcategories) => {
     });
     return result;
 }
+
+const scrub = (value) => {
+    return value.trim().toLowerCase();
+}
+
+export const hasMatch = (a,b) => {
+    return scrub(a).includes(scrub(b));
+}
