@@ -4,7 +4,7 @@ import "./CategoryFilter.css";
 
 const CategoryFilter = ({onChange}) => {
     return (<div className="CategoryFilter">
-        <label>Filter by Subcategory</label>
+        <label>Filter by Category or Subcategory</label>
         <input
             id="filter"
             onChange={onChange}

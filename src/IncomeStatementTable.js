@@ -2,45 +2,67 @@ import React from "react";
 import IncomeStatementSubCategory from "./IncomeStatementSubCategory";
 import Section from "./Section";
 import FilterContext from "./FilterContext";
-import { calcSubcategoryTotals, hasMatch } from "./utils";
+import {calcSubcategoryTotals, hasMatch} from "./utils";
 
 import "./IncomeStatementTable.css";
-
 
 const IncomeStatementTable = ({data, headers}) => {
     const hasData = data.length > 0;
 
+    const hasSubcategoryMatch = (category, keyword) => {
+        const {subCategories} = category;
+        return subCategories
+            .map( sc => sc.name)
+            .filter( name => hasMatch(name, keyword))
+            .length > 0;
+    }
+
+    const filterTableRows = (keyword) => {
+        let flag = false;
+
+        const categories = data.filter(d => {
+            if(hasSubcategoryMatch(d, keyword)) { flag = true }
+            return hasMatch(d.name, keyword) || hasSubcategoryMatch(d, keyword)
+        });
+
+        if(flag) {
+            return categories.map( cat => {
+                return {...cat, subCategories: cat.subCategories.filter( sc => hasMatch(sc.name, keyword))};
+            });
+        } else {
+            return categories;
+        }
+    }
+
     const renderCategories = ({keyword}) => {
-        return data.map((category) => {
-            const {subCategories, quarterly_total} = category;
-            const totals = {
+
+        const results = keyword ? filterTableRows(keyword) : data;
+
+        return results.length ?
+            results.map(category => {
+                const {subCategories, quarterly_total} = category;
+                const totals = {
                     name: "Total",
                     values: calcSubcategoryTotals(subCategories)
                 };
 
-            const filtered = subCategories.filter( sc => hasMatch(sc.name, keyword));
-
-            // if all subcategories are filtered out, don't show parent category
-            const shouldShow = filtered.length;
-
-            if(shouldShow) {
                 return (
                     <Section key={category.name} label={category.name} total={quarterly_total}>
-                        {filtered && filtered.map( sc => <IncomeStatementSubCategory key={sc.name} subcategory={sc}/>)}
+                        {subCategories && subCategories.map(sc => <IncomeStatementSubCategory key={sc.name}
+                                                                                              subcategory={sc}/>)}
                         <div className="Subcategory-totals">
                             <IncomeStatementSubCategory subcategory={totals} type="summary"/>
                         </div>
                     </Section>
                 );
-            } else {
-                return null;
-            }
-        })
+            })
+            : <p>There are no results</p>
+
     }
 
     const renderHeaders = (filters) => {
         return headers.map(h => {
-            if(!filters.currentPeriod || hasMatch(filters.currentPeriod, h)) {
+            if (!filters.currentPeriod || hasMatch(filters.currentPeriod, h)) {
                 return <div key={h} className="TableHead-cell responsive">{h}</div>
             } else {
                 return null;
@@ -50,12 +72,12 @@ const IncomeStatementTable = ({data, headers}) => {
 
     return hasData ?
         <FilterContext.Consumer>
-            { filters => {
+            {filters => {
                 return <>
-                        <div className="TableHead">
-                            <div className="TableHead-spacer" />
-                            { renderHeaders(filters) }
-                        </div>
+                    <div className="TableHead">
+                        <div className="TableHead-spacer"/>
+                        {renderHeaders(filters)}
+                    </div>
                     {renderCategories(filters)}
                 </>
             }}
