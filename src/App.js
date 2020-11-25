@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import IncomeStatementTable from "./IncomeStatementTable";
-import MonthSelect from "./MonthSelect";
+import {MonthSelect, SelectOptions} from "./MonthSelect";
 import CategoryFilter from "./CategoryFilter";
 import FilterContext from "./FilterContext";
 import {getIncomeStatement} from "./apiMock";
@@ -11,7 +11,7 @@ const App = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState([]);
     const [periods, setPeriods] = useState([]);
-    const [currentPeriod, setCurrentPeriod] = useState("")
+    const [currentPeriod, setCurrentPeriod] = useState(SelectOptions["QUARTERLY"])
     const [keyword, setKeyword] = useState("");
 
     const filters = {

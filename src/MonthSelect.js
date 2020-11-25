@@ -2,9 +2,21 @@ import React, { useState } from "react";
 
 import "./MonthSelect.css";
 
-const MonthSelect = ({options, onClick}) => {
+export const SelectOptions = {
+    QUARTERLY: "Quarterly",
+    MONTHLY: "Monthly"
+};
+
+export const Periods = {
+    Q1: "Q1",
+    Q2: "Q2",
+    Q3: "Q3",
+    Q4: "Q4"
+}
+
+export const MonthSelect = ({onClick}) => {
     const [open, setOpen] = useState(false);
-    const [selected, setSelected] = useState("");
+    const [selected, setSelected] = useState(SelectOptions["QUARTERLY"]);
 
     const toggleOpen = () => {
         setOpen(!open);
@@ -16,15 +28,9 @@ const MonthSelect = ({options, onClick}) => {
         setOpen(false);
     }
 
-    const handleClear = () => {
-        onClick("");
-        setSelected("")
-        setOpen(false);
-    }
-
     return (
         <div className="MonthSelect">
-            <div className="MonthSelect-label">Select Time Range</div>
+            <div className="MonthSelect-label">Show Statement By</div>
             <div
                 onClick={toggleOpen}
                 className="MonthSelect-selected"
@@ -38,13 +44,11 @@ const MonthSelect = ({options, onClick}) => {
                 {selected === "" ? "Fiscal Quarter" : selected }
                 { open
                     ? <div className="MonthSelect-options">
-                        <div onClick={handleClear}>Fiscal Quarter</div>
-                        {options.map(option => <div key={option} onClick={() => handleSelect(option)}>{option}</div>)}
+                        <div onClick={() => handleSelect(SelectOptions["QUARTERLY"])}>Quarterly</div>
+                        <div onClick={() => handleSelect(SelectOptions["MONTHLY"])}>Monthly</div>
                     </div>
                     : null
                 }
             </div>
         </div>);
 }
-
-export default MonthSelect;

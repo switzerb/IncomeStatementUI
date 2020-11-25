@@ -30,3 +30,18 @@ const scrub = (value) => {
 export const hasMatch = (a,b) => {
     return scrub(a).includes(scrub(b));
 }
+
+const isMonthInQuarter = (month, quarter) => {
+    switch(quarter) {
+        case "Q1" :
+            return ["Jan", "Feb", "Mar"].some( m => month.includes(m));
+        case "Q2":
+            return ["Apr", "May", "Jun"].some( m => month.includes(m));
+        case "Q3":
+            return ["Jul", "Aug", "Sept"].some( m => month.includes(m));
+        case "Q4":
+            return ["Oct", "Nov", "Dec"].some( m => month.includes(m));
+        default:
+            return false;
+    }
+}

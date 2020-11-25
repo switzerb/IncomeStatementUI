@@ -8,16 +8,52 @@ export const getIncomeStatement = () => {
           name: "Services",
           values: [
             {
-              month: "January, 2020",
+              month: "Jan 2020",
               value: "20152"
             },
             {
-              month: "February, 2020",
+              month: "Feb 2020",
               value: "25345"
             },
             {
-              month: "March, 2020",
+              month: "Mar 2020",
               value: "30576"
+            },
+            {
+              month: "Apr 2020",
+              value: "20152"
+            },
+            {
+              month: "May 2020",
+              value: "25345"
+            },
+            {
+              month: "Jun 2020",
+              value: "30576"
+            },
+            {
+              month: "Jul 2020",
+              value: "436467"
+            },
+            {
+              month: "Aug 2020",
+              value: "253456745"
+            },
+            {
+              month: "Sept 2020",
+              value: "509809"
+            },
+            {
+              month: "Oct 2020",
+              value: "687609"
+            },
+            {
+              month: "Nov 2020",
+              value: "98467"
+            },
+            {
+              month: "Dec 2020",
+              value: "98678"
             }
           ]
         },
@@ -25,16 +61,52 @@ export const getIncomeStatement = () => {
           name: "Subscriptions",
           values: [
             {
-              month: "January, 2020",
+              month: "Jan 2020",
               value: "180745"
             },
             {
-              month: "February, 2020",
+              month: "Feb 2020",
               value: "201082"
             },
             {
-              month: "March, 2020",
+              month: "Mar 2020",
               value: "205567"
+            },
+            {
+              month: "Apr 2020",
+              value: "20152"
+            },
+            {
+              month: "May 2020",
+              value: "25345"
+            },
+            {
+              month: "Jun 2020",
+              value: "30576"
+            },
+            {
+              month: "Jul 2020",
+              value: "436467"
+            },
+            {
+              month: "Aug 2020",
+              value: "253456745"
+            },
+            {
+              month: "Sept 2020",
+              value: "509809"
+            },
+            {
+              month: "Oct 2020",
+              value: "687609"
+            },
+            {
+              month: "Nov 2020",
+              value: "98467"
+            },
+            {
+              month: "Dec 2020",
+              value: "98678"
             }
           ]
         },
@@ -48,16 +120,52 @@ export const getIncomeStatement = () => {
           name: "Cloud Hosting Expense",
           values: [
             {
-              month: "January, 2020",
+              month: "Jan 2020",
               value: "10405"
             },
             {
-              month: "February, 2020",
+              month: "Feb 2020",
               value: "11478"
             },
             {
-              month: "March, 2020",
+              month: "Mar 2020",
               value: "11900"
+            },
+            {
+              month: "Apr 2020",
+              value: "20152"
+            },
+            {
+              month: "May 2020",
+              value: "25345"
+            },
+            {
+              month: "Jun 2020",
+              value: "30576"
+            },
+            {
+              month: "Jul 2020",
+              value: "436467"
+            },
+            {
+              month: "Aug 2020",
+              value: "253456745"
+            },
+            {
+              month: "Sept 2020",
+              value: "509809"
+            },
+            {
+              month: "Oct 2020",
+              value: "687609"
+            },
+            {
+              month: "Nov 2020",
+              value: "98467"
+            },
+            {
+              month: "Dec 2020",
+              value: "98678"
             }
           ]
         },
@@ -65,16 +173,52 @@ export const getIncomeStatement = () => {
           name: "Customer Support Expense",
           values: [
             {
-              month: "January, 2020",
+              month: "Jan 2020",
               value: "20304"
             },
             {
-              month: "February, 2020",
+              month: "Feb 2020",
               value: "20890"
             },
             {
-              month: "March, 2020",
+              month: "Mar 2020",
               value: "22836"
+            },
+            {
+              month: "Apr 2020",
+              value: "20152"
+            },
+            {
+              month: "May 2020",
+              value: "25345"
+            },
+            {
+              month: "Jun 2020",
+              value: "30576"
+            },
+            {
+              month: "Jul 2020",
+              value: "436467"
+            },
+            {
+              month: "Aug 2020",
+              value: "253456745"
+            },
+            {
+              month: "Sept 2020",
+              value: "509809"
+            },
+            {
+              month: "Oct 2020",
+              value: "687609"
+            },
+            {
+              month: "Nov 2020",
+              value: "98467"
+            },
+            {
+              month: "Dec 2020",
+              value: "98678"
             }
           ]
         },
@@ -82,16 +226,52 @@ export const getIncomeStatement = () => {
           name: "Professional Support Expense",
           values: [
             {
-              month: "January, 2020",
+              month: "Jan 2020",
               value: "25875"
             },
             {
-              month: "February, 2020",
+              month: "Feb 2020",
               value: "27958"
             },
             {
-              month: "March, 2020",
+              month: "Mar 2020",
               value: "28123"
+            },
+            {
+              month: "Apr 2020",
+              value: "20152"
+            },
+            {
+              month: "May 2020",
+              value: "25345"
+            },
+            {
+              month: "Jun 2020",
+              value: "30576"
+            },
+            {
+              month: "Jul 2020",
+              value: "436467"
+            },
+            {
+              month: "Aug 2020",
+              value: "253456745"
+            },
+            {
+              month: "Sept 2020",
+              value: "509809"
+            },
+            {
+              month: "Oct 2020",
+              value: "687609"
+            },
+            {
+              month: "Nov 2020",
+              value: "98467"
+            },
+            {
+              month: "Dec 2020",
+              value: "98678"
             }
           ]
         },
@@ -105,16 +285,52 @@ export const getIncomeStatement = () => {
           name: "Total Sales",
           values: [
             {
-              month: "January, 2020",
+              month: "Jan 2020",
               value: "40874"
             },
             {
-              month: "February, 2020",
+              month: "Feb 2020",
               value: "45567"
             },
             {
-              month: "March, 2020",
+              month: "Mar 2020",
               value: "48946"
+            },
+            {
+              month: "Apr 2020",
+              value: "20152"
+            },
+            {
+              month: "May 2020",
+              value: "25345"
+            },
+            {
+              month: "Jun 2020",
+              value: "30576"
+            },
+            {
+              month: "Jul 2020",
+              value: "436467"
+            },
+            {
+              month: "Aug 2020",
+              value: "253456745"
+            },
+            {
+              month: "Sept 2020",
+              value: "509809"
+            },
+            {
+              month: "Oct 2020",
+              value: "687609"
+            },
+            {
+              month: "Nov 2020",
+              value: "98467"
+            },
+            {
+              month: "Dec 2020",
+              value: "98678"
             }
           ]
         },
@@ -122,16 +338,52 @@ export const getIncomeStatement = () => {
           name: "Marketing Expense",
           values: [
             {
-              month: "January, 2020",
+              month: "Jan 2020",
               value: "30487"
             },
             {
-              month: "February, 2020",
+              month: "Feb 2020",
               value: "32476"
             },
             {
-              month: "March, 2020",
+              month: "Mar 2020",
               value: "33912"
+            },
+            {
+              month: "Apr 2020",
+              value: "20152"
+            },
+            {
+              month: "May 2020",
+              value: "25345"
+            },
+            {
+              month: "Jun 2020",
+              value: "30576"
+            },
+            {
+              month: "Jul 2020",
+              value: "436467"
+            },
+            {
+              month: "Aug 2020",
+              value: "253456745"
+            },
+            {
+              month: "Sept 2020",
+              value: "509809"
+            },
+            {
+              month: "Oct 2020",
+              value: "687609"
+            },
+            {
+              month: "Nov 2020",
+              value: "98467"
+            },
+            {
+              month: "Dec 2020",
+              value: "98678"
             }
           ]
         }
@@ -140,9 +392,18 @@ export const getIncomeStatement = () => {
   ];
 
   const periods = [
-      "January, 2020",
-      "February, 2020",
-      "March, 2020"
+      "Jan 2020",
+      "Feb 2020",
+      "Mar 2020",
+      "Apr 2020",
+      "May 2020",
+      "Jun 2020",
+      "Jul 2020",
+      "Aug 2020",
+      "Sept 2020",
+      "Oct 2020",
+      "Nov 2020",
+      "Dec 2020"
   ];
 
   const data = {financials, periods}

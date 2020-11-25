@@ -61,13 +61,7 @@ const IncomeStatementTable = ({data, headers}) => {
     }
 
     const renderHeaders = (filters) => {
-        return headers.map(h => {
-            if (!filters.currentPeriod || hasMatch(filters.currentPeriod, h)) {
-                return <div key={h} className="TableHead-cell responsive">{h}</div>
-            } else {
-                return null;
-            }
-        });
+        return headers.map(h => <div key={h} className="TableHead-cell responsive">{h}</div>);
     }
 
     return hasData ?
