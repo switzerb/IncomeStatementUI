@@ -3,24 +3,21 @@ export const formatMoney = (n) => {
     return `$${String(float).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
 }
 
+const groupBy = (items, extractKey) => {
+    return items.reduce((a, v) => {
+        const k = extractKey(v);
+        return {...a, [k]: (a[k] || []).concat(v)};
+    }, {});
+}
+
 export const calcSubcategoryTotals = (subcategories) => {
-    let result = [];
-    const aggregated = subcategories.reduce((a,sc)=> {
-        // eslint-disable-next-line
-        sc.values.map(v => {
-            if(!a[v.month]) {
-                a[v.month]  = [Number(v.value)];
-            } else {
-                a[v.month].push(Number(v.value));
-            }
-        });
-        return a;
-    },{});
-    // eslint-disable-next-line
-    Object.entries(aggregated).map(([k,v]) => {
-        result.push({ month: k, value: v.reduce((a,n) => a + n, 0)});
-    });
-    return result;
+    const aggregate_values = subcategories.reduce((a,sc)=> a.concat(sc.values), []);
+
+    return Object.entries(groupBy(aggregate_values, (v) => v.month))
+        .reduce((result, [k, v]) => result.concat({
+            month: k,
+            value: v.reduce((a, n) => a + Number(n.value), 0)
+        }), []);
 }
 
 const scrub = (value) => {
